@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -35,7 +35,9 @@ public class MySQLConfiguration {
 
     @Bean
     public PlatformTransactionManager MySQLTransactionManager() {
-        return new DataSourceTransactionManager(MySQLDataSource());
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setDataSource(MySQLDataSource());
+        return transactionManager;
     }
 
 

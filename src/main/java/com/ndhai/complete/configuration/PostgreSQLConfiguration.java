@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -38,6 +38,8 @@ public class PostgreSQLConfiguration {
     @Primary
     @Bean
     public PlatformTransactionManager PostgreSQLTransactionManager() {
-        return new DataSourceTransactionManager(PostgreSQLDataSource());
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setDataSource(PostgreSQLDataSource());
+        return transactionManager;
     }
 }
