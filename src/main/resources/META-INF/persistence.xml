@@ -1,0 +1,20 @@
+<persistence>
+    <persistence-unit name="MySQLPersistentUnit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.format_sql">true</prop>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="PostgreSQLPersistentUnit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.format_sql">true</prop>
+        </properties>
+    </persistence-unit>
+</persistence>
