@@ -1,4 +1,4 @@
-package com.ndhai.complete.configuration;
+package com.ndhai.complete.data.configuration;
 
 import org.apache.tomcat.jdbc.pool.DataSourceProxy;
 import org.apache.tomcat.jdbc.pool.jmx.ConnectionPool;
@@ -51,7 +51,7 @@ public class MySQLConfiguration {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(MySQLDataSource());
-        entityManagerFactoryBean.setPackagesToScan(new String[] {"com.ndhai.complete.repository.mysql"});
+        entityManagerFactoryBean.setPackagesToScan(new String[] {"complete.repository.mysql"});
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactoryBean.setPersistenceUnitName("MySQLPersistentUnit");

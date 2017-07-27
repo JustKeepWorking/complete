@@ -1,4 +1,4 @@
-package com.ndhai.complete.configuration;
+package com.ndhai.complete.data.configuration;
 
 import org.apache.tomcat.jdbc.pool.DataSourceProxy;
 import org.apache.tomcat.jdbc.pool.jmx.ConnectionPool;

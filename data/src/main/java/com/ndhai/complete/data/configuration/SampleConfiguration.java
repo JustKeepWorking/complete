@@ -1,4 +1,4 @@
-package com.ndhai.complete.configuration;
+package com.ndhai.complete.data.configuration;
 
 import org.apache.tomcat.jdbc.pool.jmx.ConnectionPool;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +25,11 @@ public class SampleConfiguration extends  AbstractDataSourceConfiguration {
     private final String JMX_POOL = "jmxPool";
     private final String TRANSACTION_MANAGER = "sampleTransactionManager";
     private final String MANAGER_FACTORY = "sampleManagerFactory";
-    private final String[] PACKAGE = {"com.ndhai.complete.sample"};
+    private final String[] PACKAGE = {"complete.sample"};
     private final String UNIT_NAME = "sampleUnitName";
 
     @Override
-    @ConfigurationProperties(prefix = "app.datasource.sample")
+    @ConfigurationProperties(prefix = "app.datasource.postgresql")
     @Bean(name = DATA_SOURCE)
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();

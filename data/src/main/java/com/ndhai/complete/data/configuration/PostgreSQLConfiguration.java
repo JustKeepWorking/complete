@@ -1,4 +1,4 @@
-package com.ndhai.complete.configuration;
+package com.ndhai.complete.data.configuration;
 
 import org.apache.tomcat.jdbc.pool.DataSourceProxy;
 import org.apache.tomcat.jdbc.pool.jmx.ConnectionPool;
@@ -55,7 +55,7 @@ public class PostgreSQLConfiguration {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(PostgreSQLDataSource());
-        entityManagerFactoryBean.setPackagesToScan(new String[] {"com.ndhai.complete.repository.postgresql"});
+        entityManagerFactoryBean.setPackagesToScan(new String[] {"complete.repository.postgresql"});
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactoryBean.setPersistenceUnitName("PostgreSQLPersistentUnit");

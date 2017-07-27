@@ -1,4 +1,4 @@
-package com.ndhai.complete.configuration;
+package com.ndhai.complete.data.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
